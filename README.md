@@ -60,3 +60,13 @@ and,
 The former makes the HTML elements visible and the later hides them (which is the default value of the variable: toggleMenu).
     
 **Time stamp: 4:02:00**
+
+# What I learned from Header
+
+**Props and components for containers**
+
+Basically if you an element that will be repeated a bunch of times in the webpage/site you're very welcome to make it a *component*. Components cant take dynamic properties, also known as *props*, which then can take values for each of the component's instances.
+
+This makes working very streamlined as well as brings consistency and cohesion to the design. Both, very important elements of a well designed product.
+
+**Time stamp: 4:12:00**
