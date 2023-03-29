@@ -123,3 +123,66 @@ If you type a parenthesis after the "arrow" in the arrow function, the element g
 **Time stamp: 4:54:00**
 
 **Time stamp for Chef section: 5:05:00**
+
+# What I learned from Intro
+
+**Usign videos in React**
+
+Simply by using the video self-closing tag you can include a video inside a webpage.
+
+     <video
+        src={meal}
+        ref={vidRef} //hook
+        type="video/mp4"
+        loop
+        controls={false}
+        muted  
+      />
+
+For this to work you are required to:
+
+1. Import the video file, in this case:
+
+    import { meal } from '../../constants'
+
+2. Import a couple of hooks from React. Namely: *useState* and *useRef*
+
+3. Set both hooks, like:
+
+    const [playVideo, setPlayVideo] = useState(false);
+    const vidRef = useRef();
+
+4. Create a handler for an *onClick* event:
+
+    const handleVideo = () => {
+        setPlayVideo((prevPlayVideo) => !prevPlayVideo);
+
+        if (playVideo) {
+          vidRef.current.pause();
+        } else {
+          vidRef.current.play();
+        }
+  };
+
+  You need to pass a callback function on the state function of the model to be able to toggle the state from the previous state. Otherwise, you'd get stucked.
+
+5. Finally create a div to build a control for play/pause and add the aforementioned *onClick* with the "handler" as an argument event:
+
+        <div className="app__video-overlay_circle flex__center"
+        onClick={handleVideo}>
+
+          {playVideo 
+                ? <BsPauseFill color="#fff" fontSize={30}/> 
+                : <BsFillPlayFill color="#fff" fontSize={30}/> 
+            }
+        </div>
+
+You can also import React icons to use for the video controls:
+
+import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
+
+... and style them at your will.
+
+*et voila!*
+
+**Time stamp: 5:16:00**
