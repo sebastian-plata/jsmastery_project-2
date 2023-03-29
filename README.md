@@ -70,3 +70,38 @@ Basically if you an element that will be repeated a bunch of times in the webpag
 This makes working very streamlined as well as brings consistency and cohesion to the design. Both, very important elements of a well designed product.
 
 **Time stamp: 4:12:00**
+
+# What I learned from About
+
+**Pre-making classes to assing same properties to multiple elements**
+
+When planning your layour it is important to think what properties are going to be shared across sections. For example: you want your containers to be ALL be centered or you want your paragraphs to all have the same text properties. One way to make things more comfortable for you is to create classes for this setups and then add them to the elements that you want to share them across. Like this: 
+
+    
+    .flex__center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .p__opensans {
+        font-family: var(--font-alt);
+        color: var(--color-white);
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        text-transform: capitalize;
+        line-height: 28px;
+        font-size: 16px;
+    }
+
+     <div className='app__aboutus-overlay flex__center'></div>
+
+     <p className='p__opensans'></p>
+
+This will *save time* by *not having to type the same style rules over and over and over again*. Also your code will look much nicer. 
+
+*When working in React you may add this styles to App.css*
+
+*Side note: Use index.css to set up your 'root' styles*
+
+**Time stamp: 4:26:00**
