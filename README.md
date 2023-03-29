@@ -105,3 +105,19 @@ This will *save time* by *not having to type the same style rules over and over 
 *Side note: Use index.css to set up your 'root' styles*
 
 **Time stamp: 4:26:00**
+
+# What I learned from About
+
+**Practice on components**
+
+Practiced passing props to component and then have the component be printed via dynamic JSX, like this:
+
+    {ARRAY.map((item,id)=>(
+
+        <Component key={id} prop-1={item.prop-1} prop-2={item.prop-2} prop-n={item.prop-n}/>
+
+    ))}
+
+If you type a parenthesis after the "arrow" in the arrow function, the element gets rendered inmediately.
+
+**Time stamp: 4:54:00**
