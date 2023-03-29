@@ -121,3 +121,5 @@ Practiced passing props to component and then have the component be printed via 
 If you type a parenthesis after the "arrow" in the arrow function, the element gets rendered inmediately.
 
 **Time stamp: 4:54:00**
+
+**Time stamp for Chef section: 5:05:00**
