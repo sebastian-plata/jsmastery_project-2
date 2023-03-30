@@ -287,6 +287,6 @@ Very straight forward container. Nothing to note about it.
 
 # What I learned from Footer
 
-Very straight forward container. Nothing to note about it.
+Pretty simple footer design and implementation through CSS. I developed a couple of components that reduce code-line bloat. This section, however, reminded me of HTML entities and that it is important to use them when required for *better practices*. Also, I'm really enjoying working under BEM methodology. It greatly helps with organization and also makes the code look more polished.
 
-**Time stamp: 5:58:00**
+**Time stamp: 6:32:00**
