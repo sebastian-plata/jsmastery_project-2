@@ -240,7 +240,7 @@ This was interesting to me because it highlights how planning your data structur
 
 **Time stamp: 5:29:00**
 
-# What I learned from Laurels
+# What I learned from Gallery
 
 **useRef back at it again**
 
@@ -278,3 +278,15 @@ You can also use *useRef* for a bunch of other things like: capturing the value 
 *and that's all folks*
 
 **Time stamp: 5:53:00**
+
+# What I learned from FindUs
+
+Very straight forward container. Nothing to note about it.
+
+**Time stamp: 5:58:00**
+
+# What I learned from Footer
+
+Very straight forward container. Nothing to note about it.
+
+**Time stamp: 5:58:00**
