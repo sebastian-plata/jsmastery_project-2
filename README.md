@@ -179,7 +179,7 @@ For this to work you are required to:
 
 You can also import React icons to use for the video controls:
 
-import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
+  import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 
 ... and style them at your will.
 
@@ -239,3 +239,42 @@ This was interesting to me because it highlights how planning your data structur
 *Cool!*
 
 **Time stamp: 5:29:00**
+
+# What I learned from Laurels
+
+**useRef back at it again**
+
+Since accessing the DOM while using React is not possible (you cannot say: document.getElementById('id')). The *hook* *useRef* is here to save your day. By assingning the atribute "ref={}" you can call that element and use it in functons.
+
+    <div className="app__gallery-images_container" ref={scrollRef}>
+    {galleryImages.map((image, index) => (
+      <div
+        className="app__gallery-images_card flex__center"
+        key={`gallery_image-${index + 1}`}
+        >
+        <img src={image} alt="gallery" />
+        <BsInstagram className="gallery__image-icon" />
+      </div>
+    ))}
+    </div>
+
+Note that "ref={scrollRef}" is used to "get" that div element. 
+
+*useRef* will create a simple object with the "current" property in it which you can use to manipulate the element. In this example we want to move the div "left" or "right".
+
+    const scrollRef = useRef(null); 
+
+    const scroll = (direction) => {
+      const { current } = scrollRef;
+      if (direction === "left") {
+        current.scrollLeft -= 300;
+      } else {
+        current.scrollLeft += 300;
+      }
+    };
+
+You can also use *useRef* for a bunch of other things like: capturing the value of an input and then printing it through the innerHTML of a 'div' or 'p'. Basically you can do all sorts of things that *document.getElementById()* allows you to.
+
+*and that's all folks*
+
+**Time stamp: 5:53:00**
