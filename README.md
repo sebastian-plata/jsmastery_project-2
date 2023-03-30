@@ -130,31 +130,31 @@ If you type a parenthesis after the "arrow" in the arrow function, the element g
 
 Simply by using the video self-closing tag you can include a video inside a webpage.
 
-     <video
-        src={meal}
-        ref={vidRef} //hook
-        type="video/mp4"
-        loop
-        controls={false}
-        muted  
-      />
+        <video
+           src={meal}
+           ref={vidRef} //hook
+           type="video/mp4"
+           loop
+           controls={false}
+           muted  
+        />
 
 For this to work you are required to:
 
 1. Import the video file, in this case:
 
-    import { meal } from '../../constants'
+        import { meal } from '../../constants'
 
 2. Import a couple of hooks from React. Namely: *useState* and *useRef*
 
 3. Set both hooks, like:
 
-    const [playVideo, setPlayVideo] = useState(false);
-    const vidRef = useRef();
+        const [playVideo, setPlayVideo] = useState(false);
+        const vidRef = useRef();
 
 4. Create a handler for an *onClick* event:
 
-    const handleVideo = () => {
+        const handleVideo = () => {
         setPlayVideo((prevPlayVideo) => !prevPlayVideo);
 
         if (playVideo) {
@@ -162,7 +162,7 @@ For this to work you are required to:
         } else {
           vidRef.current.play();
         }
-  };
+        };
 
   You need to pass a callback function on the state function of the model to be able to toggle the state from the previous state. Otherwise, you'd get stucked.
 
@@ -186,3 +186,56 @@ import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 *et voila!*
 
 **Time stamp: 5:16:00**
+
+# What I learned from Laurels
+
+**Destructuring the destructured data**
+
+In this section I had to map an array of objects that had a variable value for one of its properties: 
+
+    const awards = [
+     {
+       imgUrl: images.award02,
+       title: 'Bib Gourmond',
+       subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+     },
+     {
+       imgUrl: images.award01,
+       title: 'Rising Star',
+       subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+     },
+     {
+       imgUrl: images.award05,
+       title: 'AA Hospitality',
+       subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+     },
+     {
+       imgUrl: images.award03,
+       title: 'Outstanding Chef',
+       subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+     },
+    ];
+
+Each value of imgUrl, changes from one object to another. For the map function to return each of the objects correctly it needs to be destructured twice. Like this: 
+
+    const AwardCard = ({ award: { imgUrl, title, subtitle } }) => (
+      <div className="app__laurels_awards-card">
+        <img src={imgUrl} alt="award" />
+      </div>
+    );
+
+So, by passing "award" as an argument of the AwardCard component (which refers to each of object of the ARRAY data.awards) I could further destructure this argument into its properties: imgUrl, title, subtitle. 
+
+Which then can be passed in dynamic bits of code inside HTML/JSX elements.
+
+    <div className="app__laurels_awards">
+        {data.awards.map((award) => (
+          <AwardCard key={award.title} award={award} />
+        ))}
+    </div>
+
+This was interesting to me because it highlights how planning your data structure, as well as your file structure, plays a major role in how you manage and write your code.
+
+*Cool!*
+
+**Time stamp: 5:29:00**
